@@ -5,8 +5,8 @@ stages:
     deps:
     - path: ./src/data/load_dataset.py
       hash: md5
-      md5: 370ec80ce993e9604ec0c490974155f5
-      size: 2302
+      md5: d58bb455b8d0d6a6760e593e2297d2c7
+      size: 2114
     params:
       params.yaml:
         load_dataset.drive_link: 
@@ -18,3 +18,31 @@ stages:
       hash: md5
       md5: 3155f71c567752e38f24f887ce0c4ef8
       size: 72970
+  make_dataset:
+    cmd: python ./src/data/make_dataset.py
+    deps:
+    - path: ./data/raw/wineq.csv
+      hash: md5
+      md5: 3155f71c567752e38f24f887ce0c4ef8
+      size: 72970
+    - path: ./src/data/make_dataset.py
+      hash: md5
+      md5: 46f26b9977af3624cfca1ccadbdb7717
+      size: 3700
+    params:
+      params.yaml:
+        load_dataset.file_name: wineq
+        load_dataset.raw_data: /data/raw
+        make_dataset.processed_data: /data/processed
+        make_dataset.res_seed: 42
+        make_dataset.seed: 42
+        make_dataset.test_split: 0.3
+    outs:
+    - path: ./data/processed/test.csv
+      hash: md5
+      md5: a47f64c6769859adb2b4751a3d5bdf49
+      size: 124770
+    - path: ./data/processed/train.csv
+      hash: md5
+      md5: 93e73ce9392b603b592e484cea8360cd
+      size: 294533
