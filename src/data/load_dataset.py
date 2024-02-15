@@ -35,21 +35,15 @@ def main() :
      params_file = home_dir.as_posix() + '/params.yaml'
      try : 
           params = yaml.safe_load(open(params_file))
-          infologger.info('params.yaml loaded')
-          # create dir if not present, else execute without any warning/error
-          output_path = home_dir.as_posix() + params['load_dataset']['raw_data']
-          pathlib.Path(output_path).mkdir(parents = True, exist_ok = True)
-
      except Exception as e : 
           infologger.info(f'there\'s some issue while loading the params file or output path [check main()]. exc: {e}')
      else : 
-          try : 
-               data = load_data(params['load_dataset']['drive_link'])
-               save_data(data, output_path = output_path, file_name = params['load_dataset']['file_name'])
-          except Exception as e :
-               infologger.info(f'there\'s some issue while loading\saving the data [check main()]. exc: {e}')
-          else :
-               infologger.info('program terminated normally!')
+          # create dir if not present, else execute without any warning/error
+          output_path = home_dir.as_posix() + params['load_dataset']['raw_data']
+          pathlib.Path(output_path).mkdir(parents = True, exist_ok = True)
+          data = load_data(params['load_dataset']['drive_link'])
+          save_data(data, output_path = output_path, file_name = params['load_dataset']['file_name'])
+          infologger.info('program terminated normally!')
 
 if __name__ == "__main__" : 
      infologger.info('load_dataset.py as __main__')
