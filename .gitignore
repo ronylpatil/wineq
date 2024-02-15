@@ -78,6 +78,9 @@ target/
 # exclude temp remote storage from source control 
 temp/
 
+# exclude plots from source control
+plots/
+
 # Mac OS-specific storage files
 .DS_Store
 
