@@ -25,3 +25,17 @@ stages:
     outs:
     - .${make_dataset.processed_data}/train.csv
     - .${make_dataset.processed_data}/test.csv
+
+  build_features:
+    cmd: python ./src/features/build_features.py
+    deps:
+    - ./src/features/build_features.py
+    - .${make_dataset.processed_data}/train.csv
+    - .${make_dataset.processed_data}/test.csv
+    params:
+    - make_dataset.processed_data
+    - build_features.extended_data
+    outs:
+    - .${build_features.extended_data}/extended_train.csv
+    - .${build_features.extended_data}/extended_test.csv
+
