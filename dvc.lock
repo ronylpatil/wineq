@@ -119,3 +119,25 @@ stages:
         base.target: quality
         build_features.extended_data: /data/extended
         train_model.model_dir: /models
+  visualization:
+    cmd: python ./src/visualization/visualize.py
+    deps:
+    - path: ./models/model.joblib
+      hash: md5
+      md5: 329a22767fab1dbd342c4c6f2dc1ea02
+      size: 7056153
+    - path: ./src/visualization/visualize.py
+      hash: md5
+      md5: c7c7b66e6352d551ddf86d633561db72
+      size: 3064
+    params:
+      params.yaml:
+        base.target: quality
+        build_features.extended_data: /data/extended
+        train_model.model_dir: /models
+    outs:
+    - path: ./plots/
+      hash: md5
+      md5: 17f2cf8fc6178cfbfca365b25d65d935.dir
+      size: 25393
+      nfiles: 1
