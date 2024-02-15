@@ -10,3 +10,18 @@ stages:
     outs:
     - .${load_dataset.raw_data}/${load_dataset.file_name}.csv
 
+  make_dataset:
+    cmd: python ./src/data/make_dataset.py
+    deps:
+    - ./src/data/make_dataset.py
+    - .${load_dataset.raw_data}/${load_dataset.file_name}.csv
+    params:
+    - load_dataset.raw_data
+    - load_dataset.file_name
+    - make_dataset.test_split
+    - make_dataset.seed
+    - make_dataset.processed_data
+    - make_dataset.res_seed
+    outs:
+    - .${make_dataset.processed_data}/train.csv
+    - .${make_dataset.processed_data}/test.csv

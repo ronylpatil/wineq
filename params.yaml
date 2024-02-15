@@ -7,4 +7,8 @@ load_dataset :
   raw_data : '/data/raw'
   file_name : 'wineq'
 
-
+make_dataset : 
+  test_split : 0.30
+  seed : 42
+  processed_data : '/data/processed'
+  res_seed: 42
