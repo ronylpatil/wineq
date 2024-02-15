@@ -1,0 +1,10 @@
+base : 
+  project_name : 'wine quality prediction'
+  target : 'quality'
+
+load_dataset :
+  drive_link : 'https://drive.google.com/file/d/1FCVWcNyBX6tFYjfORhnAvIwS8I8zV92j/view?usp=sharing'
+  raw_data : '/data/raw'
+  file_name : 'wineq'
+
+
