@@ -42,14 +42,14 @@ def main() -> None :
      home_dir = curr_dir.parent.parent.parent
      dir_path = pathlib.Path(f'{home_dir.as_posix()}/plots')
 
-     data_dir = f"{home_dir.as_posix()}{params['build_features']['extended_data']}/extended_test.csv"
-     model_dir = f'{home_dir.as_posix()}{params["train_model"]["model_dir"]}/model.joblib'
-     
      try : 
           params = yaml.safe_load(open(f'{home_dir.as_posix()}/params.yaml', encoding = 'utf8'))
      except Exception as e : 
           infologger.info(f'there\'s some issue while loading params.yaml [check main()]. exc: {e}')
      else :
+          data_dir = f"{home_dir.as_posix()}{params['build_features']['extended_data']}/extended_test.csv"
+          model_dir = f'{home_dir.as_posix()}{params["train_model"]["model_dir"]}/model.joblib'
+          
           TARGET = params['base']['target']
 
           test_data = load_data(data_dir)
