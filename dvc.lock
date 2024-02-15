@@ -74,3 +74,32 @@ stages:
       hash: md5
       md5: 1717607b400b97b88d8be4e7c408832f
       size: 563187
+  train_model:
+    cmd: python ./src/models/train_model.py
+    deps:
+    - path: ./data/extended/extended_test.csv
+      hash: md5
+      md5: 9951ea94afca1d880de8f2ebeaac7eb4
+      size: 239361
+    - path: ./data/extended/extended_train.csv
+      hash: md5
+      md5: 1717607b400b97b88d8be4e7c408832f
+      size: 563187
+    - path: ./src/models/train_model.py
+      hash: md5
+      md5: e373b32628fb03deced397d27c7d2bd4
+      size: 4189
+    params:
+      params.yaml:
+        base.target: quality
+        build_features.extended_data: /data/extended
+        train_model.criterion: gini
+        train_model.max_depth: 25
+        train_model.model_dir: /models
+        train_model.n_estimators: 100
+        train_model.seed: 42
+    outs:
+    - path: ./models/model.joblib
+      hash: md5
+      md5: 329a22767fab1dbd342c4c6f2dc1ea02
+      size: 7056153
