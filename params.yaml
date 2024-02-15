@@ -1,24 +1,25 @@
-base : 
-  project_name : 'wine quality prediction'
-  target : 'quality'
+base:
+  project_name: wine quality prediction
+  target: quality
 
-load_dataset :
-  drive_link : 'https://drive.google.com/file/d/1FCVWcNyBX6tFYjfORhnAvIwS8I8zV92j/view?usp=sharing'
-  raw_data : '/data/raw'
-  file_name : 'wineq'
+load_dataset:
+  drive_link: 
+    https://drive.google.com/file/d/1FCVWcNyBX6tFYjfORhnAvIwS8I8zV92j/view?usp=sharing
+  raw_data: /data/raw
+  file_name: wineq
 
-make_dataset : 
-  test_split : 0.30
-  seed : 42
-  processed_data : '/data/processed'
+make_dataset:
+  test_split: 0.25
+  seed: 42
+  processed_data: /data/processed
   res_seed: 42
 
-build_features :
-  extended_data : '/data/extended'
+build_features:
+  extended_data: /data/extended
 
-train_model : 
-  n_estimators : 100
-  criterion : 'gini'   
-  seed : 42
-  max_depth : 25
-  model_dir : '/models'
+train_model:
+  n_estimators: 65
+  criterion: gini
+  seed: 42
+  max_depth: 35
+  model_dir: /models
