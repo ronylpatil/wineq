@@ -5,9 +5,8 @@ from src.logger import infologger
 
 infologger.info('*** Executing: load_dataset.py ***')
 
-
 # load data from given path and return df
-def load_data(remote_loc) : 
+def load_data(remote_loc: str) -> pd.DataFrame : 
      try : 
           # correct way to read data from drive
           remote_loc = 'https://drive.google.com/uc?id=' + remote_loc.split('/')[-2]  
@@ -19,7 +18,7 @@ def load_data(remote_loc) :
           return df
 
 # save data at data/raw dir
-def save_data(data, output_path, file_name) : 
+def save_data(data: pd.DateOffset, output_path: str, file_name: str) -> None : 
      try : 
           data.to_csv(path_or_buf = output_path + f'/{file_name}.csv', index = False)
      except Exception as e : 
@@ -28,7 +27,7 @@ def save_data(data, output_path, file_name) :
           infologger.info(f'data saved at [path: {output_path}/{file_name}.csv]')
 
 # load data & then save it
-def main() : 
+def main() -> None : 
      curr_dir = pathlib.Path(__file__)
      home_dir = curr_dir.parent.parent.parent
 
