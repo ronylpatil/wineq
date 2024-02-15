@@ -5,5 +5,11 @@
         "precision": 1.0,
         "recall": 1.0
     },
-    "step": 0
+    "step": 0,
+    "testing": {
+        "bal_accuracy": 0.86,
+        "roc_score": 0.98,
+        "precision": 0.85,
+        "recall": 0.86
+    }
 }
