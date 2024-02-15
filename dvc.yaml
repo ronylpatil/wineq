@@ -56,6 +56,15 @@ stages:
     outs:
     - .${train_model.model_dir}/model.joblib
 
+  predict_model:
+    cmd: python ./src/models/predict_model.py
+    deps:
+    - ./src/models/predict_model.py
+    - .${train_model.model_dir}/model.joblib
+    params:
+    - build_features.extended_data
+    - train_model.model_dir
+    - base.target
 
 params:
 - dvclive/params.yaml
