@@ -66,6 +66,18 @@ stages:
     - train_model.model_dir
     - base.target
 
+  visualization:
+    cmd: python ./src/visualization/visualize.py
+    deps:
+    - ./src/visualization/visualize.py
+    - .${train_model.model_dir}/model.joblib
+    params:
+    - build_features.extended_data
+    - train_model.model_dir
+    - base.target
+    outs:
+    - ./plots/
+
 params:
 - dvclive/params.yaml
 metrics:
