@@ -15,4 +15,10 @@ make_dataset :
 
 build_features :
   extended_data : '/data/extended'
-  
+
+train_model : 
+  n_estimators : 100
+  criterion : 'gini'   
+  seed : 42
+  max_depth : 25
+  model_dir : '/models'
