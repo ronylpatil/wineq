@@ -18,8 +18,8 @@ build_features:
   extended_data: /data/extended
 
 train_model:
-  n_estimators: 65
+  n_estimators: 90
   criterion: gini
   seed: 42
-  max_depth: 35
+  max_depth: 45
   model_dir: /models

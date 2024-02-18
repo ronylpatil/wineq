@@ -1,4 +1,4 @@
-n_estimators: 65
+n_estimators: 90
 criterion: gini
-max_depth: 35
+max_depth: 45
 random_state: 42
