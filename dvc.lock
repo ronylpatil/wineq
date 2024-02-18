@@ -97,19 +97,19 @@ stages:
         train_model.max_depth: 45
         train_model.model_dir: /models
         train_model.n_estimators: 90
-        train_model.seed: 42
+        train_model.seed: 46
     outs:
     - path: ./models/model.joblib
       hash: md5
-      md5: 382b5f19a4b127f28574a6ab25b629fc
-      size: 6597481
+      md5: 8c4d4a0d7aa99098e913631f1f846ccc
+      size: 6661993
   predict_model:
     cmd: python ./src/models/predict_model.py
     deps:
     - path: ./models/model.joblib
       hash: md5
-      md5: 382b5f19a4b127f28574a6ab25b629fc
-      size: 6597481
+      md5: 8c4d4a0d7aa99098e913631f1f846ccc
+      size: 6661993
     - path: ./src/models/predict_model.py
       hash: md5
       md5: 56d234b3a85ba656eda2a4b9a9580344
@@ -124,12 +124,12 @@ stages:
     deps:
     - path: ./models/model.joblib
       hash: md5
-      md5: 382b5f19a4b127f28574a6ab25b629fc
-      size: 6597481
+      md5: 8c4d4a0d7aa99098e913631f1f846ccc
+      size: 6661993
     - path: ./src/visualization/visualize.py
       hash: md5
-      md5: e3b09de90a5c00927ec787c2fb5f4c8a
-      size: 3192
+      md5: 1da622a525c16e2a3a327069943bde04
+      size: 3236
     params:
       params.yaml:
         base.target: quality
@@ -138,6 +138,6 @@ stages:
     outs:
     - path: ./plots/
       hash: md5
-      md5: af164abdcf3eaa44ed4b8a337a51de77.dir
-      size: 24477
+      md5: 2bb24690776bf6d2735f1c0c0ee07a91.dir
+      size: 24104
       nfiles: 1
