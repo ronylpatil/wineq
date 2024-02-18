@@ -81,7 +81,7 @@ def main() -> None :
           model_dir = f'{home_dir.as_posix()}{params["train_model"]["model_dir"]}/model.joblib'
           test_data = load_data(data_dir)
           TARGET = params['base']['target']
-          x_test = test_data.drop(columns = [TARGET])
+          x_test = test_data.drop(columns = [TARGET]).values
           y_test = test_data[TARGET]
 
           evaluate(x_test, y_test, load_model(model_dir))

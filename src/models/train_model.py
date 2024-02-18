@@ -73,7 +73,7 @@ def main() -> None :
           pathlib.Path(model_dir).mkdir(parents = True, exist_ok = True)
           
           data = load_data(train_data)
-          X_train = data.drop(columns = [TARGET])
+          X_train = data.drop(columns = [TARGET]).values
           Y = data[TARGET]
 
           model, _ = train_model(X_train, Y, parameters['n_estimators'], parameters['criterion'], parameters['max_depth'],
