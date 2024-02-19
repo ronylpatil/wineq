@@ -128,8 +128,8 @@ stages:
       size: 6661993
     - path: ./src/visualization/visualize.py
       hash: md5
-      md5: 7956c4fde28990de495b4917da4b1c05
-      size: 3279
+      md5: f76a6e5e7284f26aa052d242920507f0
+      size: 3281
     params:
       params.yaml:
         base.target: quality
@@ -138,6 +138,6 @@ stages:
     outs:
     - path: ./plots/
       hash: md5
-      md5: d751713988987e9331980363e24189ce.dir
-      size: 0
-      nfiles: 0
+      md5: 370ff08b2b6f6e5cce1a2f37f54d19b4.dir
+      size: 24104
+      nfiles: 1

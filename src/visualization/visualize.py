@@ -20,7 +20,7 @@ def conf_matrix(y_test: pd.Series, y_pred: pd.Series, labels: np.ndarray, path: 
           # pathlib.Path(f'{path}/"cm_{curr_time}"').mkdir(parents = True, exist_ok = True)
           # print(path)
           # directory_path = pathlib.Path(path)
-          # directory_path.mkdir(parents = True, exist_ok = True)
+          pathlib.Path(path).mkdir(parents = True, exist_ok = True)
           # pathlib.Path(f"{directory_path}/cm_{current_time}").mkdir()
      except Exception as e : 
           infologger.info(f'there\'s an issue in directory [check conf_metrix()]. exc: {e}')
