@@ -76,8 +76,8 @@ async def predict_wineq(user_input : WineqIp) -> dict :
      predicted_class = prediction[0]
      confidence = float('{:.4f}'.format(pred_prob[0][prediction[0] - 3]))
 
-     if confidence > 0.75 : return {'prediction' : {'predicted_class' : predicted_class, 'confidence' : confidence}} 
-     else : return {'prediction': 'Unexpected result!'}
+     if confidence > 0.70 : return {'prediction' : {'predicted_class' : predicted_class, 'confidence' : confidence}} 
+     else : return {'prediction': 'Unexpected result'}
 
 if __name__ == '__main__' :
     import uvicorn
