@@ -20,6 +20,6 @@ build_features:
 train_model:
   n_estimators: 90
   criterion: gini
-  seed: 45
+  seed: 43
   max_depth: 45
   model_dir: /models

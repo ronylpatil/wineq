@@ -79,7 +79,7 @@ target/
 temp/
 
 # exclude plots from source control
-/plots
+# /plots
 
 # Mac OS-specific storage files
 .DS_Store
