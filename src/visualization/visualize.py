@@ -17,10 +17,11 @@ def roc_curve() -> None :
 def conf_matrix(y_test: pd.Series, y_pred: pd.Series, labels: np.ndarray, path: str) -> None : 
      try : 
           curr_time = datetime.now().strftime('%d%b%y-%H.%M.%S')
-          # pathlib.Path(f'{path}/"cm_{curr_time}"').mkdir(parents = True, exist_ok = True)
+          dir_path = pathlib.Path(f'{path}/"cm_{curr_time}"')
+          dir_path.mkdir(parents = True, exist_ok = True)
           # print(path)
           # directory_path = pathlib.Path(path)
-          pathlib.Path(path).mkdir(parents = True, exist_ok = True)
+          # pathlib.Path(path).mkdir(parents = True, exist_ok = True)
           # pathlib.Path(f"{directory_path}/cm_{current_time}").mkdir()
      except Exception as e : 
           infologger.info(f'there\'s an issue in directory [check conf_metrix()]. exc: {e}')
@@ -33,17 +34,17 @@ def conf_matrix(y_test: pd.Series, y_pred: pd.Series, labels: np.ndarray, path: 
                plt.title('Confusion Matrix')
                plt.xlabel('Predicted Label')
                plt.ylabel('True Label')
-               plt.savefig(f'{path}/cM_{curr_time}.png')
+               plt.savefig(f'{dir_path}/cM_{curr_time}.png')
                plt.close()
           except Exception as e : 
                infologger.info(f'there\'s an issue in ploting confusion metrix [check conf_metrix()]. exc: {e}')
           else :
-               infologger.info(f'confusion metrix saved at [{path}]')
+               infologger.info(f'confusion metrix saved at [{dir_path}]')
 
 def main() -> None :
      curr_dir = pathlib.Path(__file__)
      home_dir = curr_dir.parent.parent.parent
-     dir_path = pathlib.Path(f'{home_dir.as_posix()}/plots')
+     dir_path = f'{home_dir.as_posix()}/plots'
      # dir_path.mkdir(parents = True, exist_ok = True)
 
      try : 

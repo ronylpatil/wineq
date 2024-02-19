@@ -128,10 +128,16 @@ stages:
       size: 6636009
     - path: ./src/visualization/visualize.py
       hash: md5
-      md5: f76a6e5e7284f26aa052d242920507f0
-      size: 3281
+      md5: eae998f17fe1ad6404800930e10e02f8
+      size: 3306
     params:
       params.yaml:
         base.target: quality
         build_features.extended_data: /data/extended
         train_model.model_dir: /models
+    outs:
+    - path: ./plots/
+      hash: md5
+      md5: d751713988987e9331980363e24189ce.dir
+      size: 0
+      nfiles: 0

@@ -90,3 +90,4 @@ temp/
 
 # Mypy cache
 .mypy_cache/
+/plots
