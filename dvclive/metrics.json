@@ -9,7 +9,7 @@
     "testing": {
         "bal_accuracy": 0.87,
         "roc_score": 0.98,
-        "precision": 0.86,
+        "precision": 0.87,
         "recall": 0.87
     }
 }

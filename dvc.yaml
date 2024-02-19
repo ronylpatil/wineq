@@ -75,8 +75,8 @@ stages:
     - build_features.extended_data
     - train_model.model_dir
     - base.target
-    outs:
-    - ./plots/
+    # outs:
+    # - ./plots/
 
 params:
 - dvclive/params.yaml
