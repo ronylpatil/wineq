@@ -17,12 +17,8 @@ def roc_curve() -> None :
 def conf_matrix(y_test: pd.Series, y_pred: pd.Series, labels: np.ndarray, path: str) -> None : 
      try : 
           curr_time = datetime.now().strftime('%d%b%y-%H.%M.%S')
-          dir_path = pathlib.Path(f'{path}/"cm_{curr_time}"')
+          dir_path = pathlib.Path(f'{path}/cm_{curr_time}')
           dir_path.mkdir(parents = True, exist_ok = True)
-          # print(path)
-          # directory_path = pathlib.Path(path)
-          # pathlib.Path(path).mkdir(parents = True, exist_ok = True)
-          # pathlib.Path(f"{directory_path}/cm_{current_time}").mkdir()
      except Exception as e : 
           infologger.info(f'there\'s an issue in directory [check conf_metrix()]. exc: {e}')
      else :
@@ -34,7 +30,7 @@ def conf_matrix(y_test: pd.Series, y_pred: pd.Series, labels: np.ndarray, path: 
                plt.title('Confusion Matrix')
                plt.xlabel('Predicted Label')
                plt.ylabel('True Label')
-               plt.savefig(f'{dir_path}/cM_{curr_time}.png')
+               plt.savefig(f'{dir_path}/confusion_mat.png')
                plt.close()
           except Exception as e : 
                infologger.info(f'there\'s an issue in ploting confusion metrix [check conf_metrix()]. exc: {e}')

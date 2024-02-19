@@ -10,7 +10,7 @@ load_dataset:
 
 make_dataset:
   test_split: 0.25
-  seed: 42
+  seed: 41
   processed_data: /data/processed
   res_seed: 42
 
